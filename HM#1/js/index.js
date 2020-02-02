@@ -41,6 +41,8 @@ Rounding to hundreds: ${Math.round( sumOffGoods/100 )*100}
 Rounded sum is Even: ${(Math.floor(sumOffGoods)%2===0)? true:false}${/*является сумма всех товаров (округленная в меньшую сторону) четным или нечетным числом*/''}
 Change: ${500-sumOffGoods}${/*Выведите сумму сдачи, при оплате всех товаров*/''}
 
+Avarage price: ${(sumOffGoods/prices.length).toFixed(2)}
+
 Random discount: ${randDiscount} %
 Price \with discount: ${(sumOffGoods-(sumOffGoods*randDiscount/100)).toFixed(2)}
 Lost Profit: ${	(sumOffGoods/2 - (sumOffGoods*randDiscount/100)).toFixed(2) }
