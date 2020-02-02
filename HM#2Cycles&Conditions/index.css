@@ -1,0 +1,10 @@
+body{
+	background: white;
+	color: royalblue;
+}
+
+.container p{
+    margin-left: 5rem;
+    margin-right: auto;
+    width: 10rem
+}
