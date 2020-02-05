@@ -36,7 +36,7 @@ let template = `
 Max product price: ${ Math.max.apply(null,prices) }	${/*Используя встроенный объект Math – выведите максимальное число*/''}
 Min product price: ${ Math.min.apply(null,prices) } ${/*Используя встроенный объект Math – выведите минимальное число*/''}
 Cost of all goods: ${ sumOffGoods } ${/*выведите эту сумму*/''}
-Sum of integer part of all goods prices \with rounding to smallest(nearest): ${ prices.map(el => Math.floor(el)).reduce((a,b)=>a+b) } ${/*Сложите только целую часть стоимости всех товаров ..*/''}
+Sum of integer part of all goods prices: ${ prices.map(el => Math.floor(el)).reduce((a,b)=>a+b) } ${/*Сложите только целую часть стоимости всех товаров ..*/''}
 Whole sum rounder to min: ${Math.floor(sumOffGoods)}
 Rounding to hundreds: ${Math.ceil( sumOffGoods/100 )*100}
 Rounded sum is Even: ${(Math.floor(sumOffGoods)%2===0)? true:false}${/*является сумма всех товаров (округленная в меньшую сторону) четным или нечетным числом*/''}
