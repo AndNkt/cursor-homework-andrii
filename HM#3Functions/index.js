@@ -184,3 +184,4 @@ deleteDuplicateLetter = (sentence) => {
 
 console.log('Biscuit was wery soft->', deleteDuplicateLetter("Biscuit was wery soft"));
 console.log('Duplicated Complicated->', deleteDuplicateLetter('Duplicated Complicated'));
+console.log(deleteDuplicateLetter('Бисквит был очень нежный'));
