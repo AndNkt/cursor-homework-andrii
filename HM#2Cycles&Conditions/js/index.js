@@ -24,7 +24,7 @@ function getUserInput(){
 	//get M
 	numM = getNum('M','');
 
-	while(numN>numM){
+	while(numN>numM || numN===numM){
 		numM= getNum('M','Re-')
 	}
 	console.log('N-',numN,' M-',numM)
