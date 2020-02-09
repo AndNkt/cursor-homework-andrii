@@ -1,6 +1,24 @@
+//---------------------------------------------------------------------------------------------------
+//1
+const getMaxDigit = (num) => {	
+	let p=Number(num);
+		//console.log(p);
+	if(isNaN(p)===true || p===0){
+		return 'Input number or GT than 0'
+	}else{
+		return parseInt(Math.max(...p.toString().split('')));
+		}
+}
+	
+console.log('getMaxDigit(385)->8',getMaxDigit(385));	
+//console.log(getMaxDigit('p23'));
+console.log('getMaxDigit(1236)->6',getMaxDigit(1236));
+console.log('getMaxDigit(987)->9',getMaxDigit(987));
+console.log('getMaxDigit(385)->8',getMaxDigit(385));
 
 
-
+//---------------------------------------------------------------------------------------------------
+//2 
 funPow = (num, pow) => {
 //TODO realize pow 1/2,1/3, 0.25, etc. 
 /*
@@ -37,23 +55,28 @@ while
 //console.log('funPow(2,1.2)',funPow(2,1.2));
 console.log('funPow(2,0)',funPow(2,0));
 console.log('funPow(2,1)',funPow(2,1));
-console.log('funPow(2,1.2)',funPow(2,3));
+console.log('funPow(2,3)',funPow(2,3));
 
+
+//---------------------------------------------------------------------------------------------------
 //3
 firstLetter = (str) => str.charAt(0).toUpperCase()+str.slice(1,).toLowerCase();
 
 console.log('firstLetter("mike")', firstLetter("mike"));
 console.log('firstLetter("mIKE")', firstLetter("mIKE"));
 
+//---------------------------------------------------------------------------------------------------
 //4
 wageSumAfterTaxes = (salary) => salary - salary*0.195; 
 console.log('wageSumAfterTaxes(1000)', wageSumAfterTaxes(1000));
 
+//---------------------------------------------------------------------------------------------------
 //5
 getRandomNumber = (N, M) => Math.floor(Math.random()*(Math.floor(M)- Math.ceil(N)+1))+N;
 
 console.log('getRandomNumber(1,10)',getRandomNumber(1,10));
 
+//---------------------------------------------------------------------------------------------------
 //6
 countLetter = (letter, str) => {
 	let counter=0;//todo put charCodeAtLocal
@@ -70,6 +93,7 @@ countLetter = (letter, str) => {
 //console.log('countLetter("A", "Asasa")=>', countLetter("A", "Asasa"));
 console.log('countLetter("A", "Astalavista")', countLetter("A", "Astalavista"))
 
+//---------------------------------------------------------------------------------------------------
 //7
 convertCurrency=(str)=>{
 
@@ -106,7 +130,7 @@ console.log('convertCurrency("100UAh")',convertCurrency("100Uah"));
 //console.log('convertCurrency("\$100\$")',convertCurrency("$100$"));
 //console.log('convertCurrency("$100usd")',convertCurrency("$100usd"));
 
-
+//---------------------------------------------------------------------------------------------------
 //8
 getRandomPassword = (defPassLen=4) => Math.random()
 										  .toString()
@@ -114,7 +138,7 @@ getRandomPassword = (defPassLen=4) => Math.random()
 
 console.log('getRandomPassword()',getRandomPassword());
 console.log('getRandomPassword()',getRandomPassword(8));
-
+//---------------------------------------------------------------------------------------------------
 //9 
 deleteLetters = (letr, wrd) => wrd.toLowerCase()
 								  .split('')
@@ -123,6 +147,7 @@ deleteLetters = (letr, wrd) => wrd.toLowerCase()
 
 console.log('deleteLetters("a", "blablabla")', deleteLetters("a", "blablabla"));
 
+//---------------------------------------------------------------------------------------------------
 //10
 
 isPalyndrom = (someString) =>{
@@ -140,9 +165,9 @@ isPalyndrom = (someString) =>{
 console.log('Madam', isPalyndrom('Madam'));
 console.log('Kokos', isPalyndrom('Kokos'));
 
+//---------------------------------------------------------------------------------------------------
 //11
 
-//bcuaeryo
 deleteDuplicateLetter = (sentence) => {
 	let normalized= sentence.toLowerCase().split(' ').join('').split('').slice().join('');
 
