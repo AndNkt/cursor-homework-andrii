@@ -1,10 +1,10 @@
-//const STUDENTS = ["Саша", "Игорь", "Лена", "Ира", "Алексей", "Светлана"];
-const STUDENTS = ["Alexander", "Igor", "Lena", "Ira", "Alexey", "Svetlana"];
+const STUDENTS = ["Саша", "Игорь", "Лена", "Ира", "Алексей", "Светлана"];
+//const STUDENTS = ["Alexander", "Igor", "Lena", "Ira", "Alexey", "Svetlana"];
 
 const GENDER_MASK = [1,1,0,0,1,0];//somewhere from service (1-male, 0-female)
 
-//const THEMES = ["Дифференциальные уравнения", "Теория автоматов", "Алгоритмы и структуры данных"];
-const THEMES = ['Diff equations', 'Theory of automats', 'Algorithms and data structures'];
+const THEMES = ["Дифференциальные уравнения", "Теория автоматов", "Алгоритмы и структуры данных"];
+//const THEMES = ['Diff equations', 'Theory of automats', 'Algorithms and data structures'];
 
 const MARKS = [4, 5, 5, 3, 4, 5];
 
@@ -58,7 +58,7 @@ console.log(getPairsResult);
 
 ///////////////////////////////////////////////////////////////////////////////
 //2
-studsAndTheme = ( pairedArr, thms ) => pairedArr.map( (el,ind) =>  [el.join(' and ')  ,thms[ind]]  );
+studsAndTheme = ( pairedArr, thms ) => pairedArr.map( (el,ind) =>  [el.join(' и ')  ,thms[ind]]  );
 
 let resStudsTheme = studsAndTheme(getPairsResult, THEMES.sort(()=>Math.random()-0.5)); //get rand theme
 
