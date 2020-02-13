@@ -46,7 +46,6 @@ getMedian=(...nums) =>{
 		let index = nums.length/2;
 		return (nums.length%2===0)? (nums[index]+nums[--index])/2 : nums[parseInt(index)];
 	}else return nums;
-	
 }
 
 let kuru = [7,4,5,3,1,2,6];
@@ -67,3 +66,9 @@ console.log('Even nums for [1, 2, 3, 4, 5, 6]',filterEvenNumbers(...exmplEvNums)
 
 /////////////////////////////////////////////////////////
 //6
+
+let arrForPosNums = [1, -2, 3, -4, -5, 6];
+
+countPositiveNumbers=(...numbers)=> numbers.filter( el=> el>0).length;
+
+console.log(countPositiveNumbers(...arrForPosNums));
