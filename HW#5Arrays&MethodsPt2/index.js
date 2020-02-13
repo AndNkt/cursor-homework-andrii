@@ -90,11 +90,18 @@ console.log(getDividedByFive(...numbers))
 //9
 divideByThree=(word)=>{
 	console.log(word);
-	let str = word.toLowwerCase().split(' ').join(' ');
+	let str = word.toLowerCase().split(' ').join('');
+	let intTimes = str.length/3
+	console.log('in',intTimes,str.length)
+	if(str.length>3){
+
+	}else return str;
 	console.log(str);
 }
 
 
+divideByThree('Commanderr');
+//divideByThree('Commander commander');
 
 
 
