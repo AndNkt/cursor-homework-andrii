@@ -72,3 +72,10 @@ let arrForPosNums = [1, -2, 3, -4, -5, 6];
 countPositiveNumbers=(...numbers)=> numbers.filter( el=> el>0).length;
 
 console.log(countPositiveNumbers(...arrForPosNums));
+
+/////////////////////////////////////////////////////////
+//7
+
+getDividedByFive = (...numbers) => numbers.filter(filtCllbck).filter( el => el%5 === 0 )
+
+console.log(getDividedByFive(...numbers))
