@@ -20,7 +20,7 @@ getRandomArray = (length, min, max)=>{
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
-//2
+//2 kind a tuff maybe set or obj use or arr
 /*getModa = (...nums) => {
 	let coins=[];
 	let p = nums.filter(filtCllbck);
@@ -74,8 +74,29 @@ countPositiveNumbers=(...numbers)=> numbers.filter( el=> el>0).length;
 console.log(countPositiveNumbers(...arrForPosNums));
 
 /////////////////////////////////////////////////////////
-//7
+//7 i'm bored
 
 getDividedByFive = (...numbers) => numbers.filter(filtCllbck).filter( el => el%5 === 0 )
 
 console.log(getDividedByFive(...numbers))
+
+/////////////////////////////////////////////////////////
+//8
+//на изичях 
+// a lot of sex with regexp
+
+
+/////////////////////////////////////////////////////////
+//9
+divideByThree=(word)=>{
+	console.log(word);
+	let str = word.toLowwerCase().split(' ').join(' ');
+	console.log(str);
+}
+
+
+
+
+
+
+
