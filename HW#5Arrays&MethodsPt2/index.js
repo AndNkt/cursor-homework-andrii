@@ -16,7 +16,7 @@ getRandomArray = (length, min, max)=>{
 	return randArr;
 }
 
-//console.log(getRandomArray(15,1,100));
+console.log(getRandomArray(15,1,100));
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -82,8 +82,43 @@ console.log(getDividedByFive(...numbers))
 
 /////////////////////////////////////////////////////////
 //8
-//на изичях 
-// a lot of sex with regexp
+let strWithBadWrds = 'What a fuck you talking you Fucking fuck. Shitty-fuck';
+
+let songWithBadWords = 'You such a fuckin whore and i love it, you such a Fuckin whore and i love it, your boy is a dork... '+
+						'she take lines.. i dont remember words and i love it... '+
+						'Ima sick fuck i like quick fuck. Ima sick fuck i like quick fuck. '+
+						'i like my dick suck, i buy sick truck, i buy a new tits, i\'ll get ya niptuck.....' ;
+
+
+let badTokens =['fuck', 'shit'];
+
+let songBadTokens = ['dick',...badTokens];
+
+replaceBadWords = ( strUncens, badWrds) =>{
+	let t = strUncens.toLowerCase().split(' ').join(' ');
+	//console.log(t);
+	
+		for (let i=0; i<badWrds.length; i++){
+			//generate RegExp from arr
+			let regBw = new RegExp(badWrds[i], 'gim');
+			//console.log(regBw);
+			
+			t= t.replace(regBw, '*'.repeat(badWrds[i].length))
+		
+			//console.log(t);
+		}
+	
+	console.log(t);
+	
+
+}
+
+replaceBadWords(strWithBadWrds, badTokens);
+
+replaceBadWords(songWithBadWords, songBadTokens);
+
+
+
 
 
 /////////////////////////////////////////////////////////
