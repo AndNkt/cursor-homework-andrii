@@ -16,7 +16,7 @@ getRandomArray = (length, min, max)=>{
 	return randArr;
 }
 
-console.log(getRandomArray(15,1,100));
+console.log('getRandomArray(15,1,100)',getRandomArray(15,1,100));
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -64,15 +64,14 @@ getModa = (...nums) => {
 	return coins;
 }
 
-console.log(getModa(...numbers))
-
-console.log(getModa(...arrForCheck1))
-console.log(getModa(...arrForCheck2))
+console.log(getModa(...numbers));
+console.log('getModa [1,2,2,3,3,4,4,5]', getModa(...arrForCheck1));
+console.log('getModa [1,2,2,3,3,4,4,5,5,5]', getModa(...arrForCheck2));
 
 //3
 getAverage = (...nums) =>   nums.filter(filtCllbck).reduce((a,b)=> a+b)/nums.filter(filtCllbck).length;
 
-//console.log('Average',getAverage(...numbers));
+console.log('Average',getAverage(...numbers));
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //4
@@ -116,7 +115,7 @@ console.log('Positive nums count-',countPositiveNumbers(...arrForPosNums));
 
 getDividedByFive = (...numbers) => numbers.filter(filtCllbck).filter( el => el%5 === 0 )
 
-console.log(getDividedByFive(...numbers))
+console.log('getDividedByFive()',getDividedByFive(...numbers))
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //8
@@ -143,8 +142,8 @@ replaceBadWords = ( strUncens, badWrds) =>{
 	return t;
 }
 
-replaceBadWords(strWithBadWrds, badTokens);
-replaceBadWords(songWithBadWords, songBadTokens);
+console.log(replaceBadWords(strWithBadWrds, badTokens));
+console.log(replaceBadWords(songWithBadWords, songBadTokens));
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
