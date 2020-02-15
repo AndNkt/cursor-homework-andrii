@@ -74,7 +74,7 @@ countPositiveNumbers=(...numbers)=> numbers.filter( el=> el>0).length;
 console.log(countPositiveNumbers(...arrForPosNums));
 
 /////////////////////////////////////////////////////////
-//7 i'm bored
+//7
 
 getDividedByFive = (...numbers) => numbers.filter(filtCllbck).filter( el => el%5 === 0 )
 
@@ -96,48 +96,50 @@ let songBadTokens = ['dick',...badTokens];
 
 replaceBadWords = ( strUncens, badWrds) =>{
 	let t = strUncens.toLowerCase().split(' ').join(' ');
-	//console.log(t);
-	
+
 		for (let i=0; i<badWrds.length; i++){
 			//generate RegExp from arr
 			let regBw = new RegExp(badWrds[i], 'gim');
-			//console.log(regBw);
-			
 			t= t.replace(regBw, '*'.repeat(badWrds[i].length))
-		
-			//console.log(t);
 		}
-	
-	console.log(t);
-	
-
+	return t;
 }
 
 replaceBadWords(strWithBadWrds, badTokens);
-
 replaceBadWords(songWithBadWords, songBadTokens);
-
-
-
 
 
 /////////////////////////////////////////////////////////
 //9
 divideByThree=(word)=>{
 	console.log(word);
-	let str = word.toLowerCase().split(' ').join('');
-	let intTimes = str.length/3
-	console.log('in',intTimes,str.length)
+	let str = word.toLowerCase().split(' ').join('').split('');
+
 	if(str.length>3){
 
-	}else return str;
-	console.log(str);
+			for (let i=0; i<str.length; i++){
+
+ 				if(i%4=== 0 ) {
+ 					str.splice(i, 0 , ' ')
+ 				}
+			}
+ 		str = str.slice(1).join('').split(' ')
+ 		return str;
+	}	else return str.join('');
+	console.log('Arr',str);
 }
 
+console.log(divideByThree('NWA'));
+console.log(divideByThree("live"));
+console.log(divideByThree('Commander'));
+console.log(divideByThree('Commander commander'));
 
-divideByThree('Commanderr');
-//divideByThree('Commander commander');
 
+
+
+
+/////////////////////////////////////////////////////////
+//10
 
 
 
