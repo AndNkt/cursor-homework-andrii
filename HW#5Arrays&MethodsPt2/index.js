@@ -16,7 +16,7 @@ getRandomArray = (length, min, max)=>{
 	return randArr;
 }
 
-//console.log(getRandomArray(15,1,100));
+console.log(getRandomArray(15,1,100));
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -89,9 +89,9 @@ getMedian=(...nums) =>{
 let kuru = [7,4,5,3,1,2,6];
 let nunu = [1, 5, 3, 4, 2];
 let numu = [4, 3, 2, 1]
-//console.log('Median of [1, 5, 3, 4, 2]',getMedian(...nunu));
-//console.log('Median of [4, 3, 2, 1]' ,getMedian(...numu));
-//console.log(getMedian(...kuru));
+console.log('Median of [1, 5, 3, 4, 2]',getMedian(...nunu));
+console.log('Median of [4, 3, 2, 1]' ,getMedian(...numu));
+console.log(getMedian(...kuru));
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //5
@@ -100,7 +100,7 @@ let exmplEvNums = [1, 2, 3, 4, 5, 6];
 
 filterEvenNumbers=(...nums) => nums.filter(filtCllbck).filter( num => num%2 > 0)
 
-//console.log('Even nums for [1, 2, 3, 4, 5, 6]',filterEvenNumbers(...exmplEvNums));
+console.log('Even nums for [1, 2, 3, 4, 5, 6]',filterEvenNumbers(...exmplEvNums));
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //6
@@ -109,14 +109,14 @@ let arrForPosNums = [1, -2, 3, -4, -5, 6];
 
 countPositiveNumbers=(...numbers)=> numbers.filter( el=> el>0).length;
 
-//console.log('Positive nums count-',countPositiveNumbers(...arrForPosNums));
+console.log('Positive nums count-',countPositiveNumbers(...arrForPosNums));
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //7
 
 getDividedByFive = (...numbers) => numbers.filter(filtCllbck).filter( el => el%5 === 0 )
 
-//console.log(getDividedByFive(...numbers))
+console.log(getDividedByFive(...numbers))
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //8
@@ -125,7 +125,7 @@ let strWithBadWrds = 'What a fuck you talking you Fucking fuck. Shitty-fuck';
 let songWithBadWords = 'You such a fuckin whore and i love it, you such a Fuckin whore and i love it, your boy is a dork... '+
 						'she take lines.. i dont remember words and i love it... '+
 						'Ima sick fuck i like quick fuck. Ima sick fuck i like quick fuck. '+
-						'i like my dick suck, i buy sick truck, i buy a new tits, i\'ll get ya niptuck.....' ;
+						'i like my dick suck, i buy sick truck, i buy a new tits, i\'ll get ya niptuck.....';
 
 
 let badTokens =['fuck', 'shit'];
@@ -167,14 +167,43 @@ divideByThree=(word)=>{
 	
 }
 
-//console.log(divideByThree('NWA'));
-//console.log(divideByThree("live"));
-//console.log(divideByThree('Commander'));
-//console.log(divideByThree('Inspector Gadget'));
+console.log(divideByThree('NWA'));
+console.log(divideByThree("live"));
+console.log(divideByThree('Commander'));
+console.log(divideByThree('Inspector Gadget'));
 
 ////////////////////////////////////////////////////////////////////////////////////////
-//10
+//10 UNFINISHED (UNDONE)    try to do by myself but i cant ....(code not mine) 
+/*
+generateCombinations = (str) =>{
+	if(str.length>10 || str.length===0 || str.length===1){
+		return str
+	}else{
+		let p = str.split('');
+		p=p.reduce(	(a,b) => { b.map( a => a+b ) });
+		console.log(p);
+	}
+}
+generateCombinations("man")
 
+function getAllPermutations(string) {
+  var results = [];
+
+  if (string.length === 1) {
+    results.push(string);
+    return results;
+  }
+
+    var charsLeft = string.substring(0, i) + string.substring(i + 1);
+    var innerPermutations = getAllPermutations(charsLeft);
+    for (var j = 0; j < innerPermutations.length; j++) {
+      results.push(firstChar + innerPermutations[j]);
+    }
+  }
+  return results;
+}
+
+*/
 
 
 
