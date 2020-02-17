@@ -44,7 +44,7 @@ getAverageMark = (stud) =>{
 }
 
 console.log('getAvg()', getAverageMark(students[0]));
-console.log('getAvg()', getAverageMark(students[2]));
+//console.log('getAvg()', getAverageMark(students[2]));
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //3
@@ -59,15 +59,12 @@ console.log('getStudentInfo(students[0])', getStudentInfo(students[0]));
 ////////////////////////////////////////////////////////////////////////////////////////
 //4
 getStudentsNames = (studs) => {
-	console.log(studs)
 	let studsNames = [];
 
 	for( stud in studs){
 		studsNames.push(studs[stud].name)
 	}
-
 	return studsNames.sort();
-	
 }
 
 console.log('getStudentsNames(students)',getStudentsNames(students));
@@ -86,19 +83,32 @@ getBestStudent = (studs)=> {
 			//console.log(getStudentInfo(studs[stud]))
 		}else{
 			if(studMark< averageMark){
-				
+				studMark = averageMark;
+				bestStudName = name;
 			}
 		}
-
 	}
-
+	return bestStudName;
 }
 
 
-getBestStudent(students);
+console.log(getBestStudent(students));
 
+////////////////////////////////////////////////////////////////////////////////////////
+//6
 
+calculateWordLetters = (word) =>{
+	let arrOfLetters = {};
+	let sArr = Array.from(new Set(word.split('')));
+	for(let i=0; i< sArr.length; i++){
+		arrOfLetters[sArr[i]]=word.split('').filter( el => el===sArr[i]).length
+	}
+	console.log(arrOfLetters);
+}
 
+calculateWordLetters('test');
+//calculateWordLetters('rest');
+//calculateWordLetters('quest');
 
 
 
