@@ -106,23 +106,3 @@ calculateWordLetters = (word) =>{
 calculateWordLetters('test');
 //calculateWordLetters('rest');
 //calculateWordLetters('quest');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//	console.log(getSubjects(students));
