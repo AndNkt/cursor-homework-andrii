@@ -60,7 +60,6 @@ console.log('getStudentInfo(students[0])', getStudentInfo(students[0]));
 //4
 getStudentsNames = (studs) => {
 	let studsNames = [];
-
 	for( stud in studs){
 		studsNames.push(studs[stud].name)
 	}
@@ -80,7 +79,7 @@ getBestStudent = (studs)=> {
 		if (stud==1){
 			studMark = averageMark;
 			bestStudName = name;
-			//console.log(getStudentInfo(studs[stud]))
+	
 		}else{
 			if(studMark< averageMark){
 				studMark = averageMark;
@@ -91,12 +90,10 @@ getBestStudent = (studs)=> {
 	return bestStudName;
 }
 
-
 console.log(getBestStudent(students));
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //6
-
 calculateWordLetters = (word) =>{
 	let arrOfLetters = {};
 	let sArr = Array.from(new Set(word.split('')));
