@@ -28,7 +28,7 @@ function getMySalary(){
 	let taxes = this.tax;
 	let profit = parseFloat((randSalary - taxes*randSalary).toFixed(2));
 
-	return console.log({ salary:randSalary, taxes: taxes, profit: profit })
+	return { salary:randSalary, taxes: taxes, profit: profit }
 }
 //////////////////////////////////////////////////////////////////////////
 console.log('getMyTaxes.call(ukraine, 1000)->', getMyTaxes.call(ukraine, 1000));
@@ -40,7 +40,7 @@ console.log('getTotalTaxes.call(ukraine)->', getTotalTaxes.call(ukraine));
 
 
 function printMySalary(){
-	getMySalary.call(ukraine)
+	console.log(getMySalary.call(ukraine))
 }
 
 printMySalary();//first call
