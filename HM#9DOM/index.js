@@ -42,9 +42,11 @@ function generateBlocks(){
 
 window.onload = function(){
 	generateBlocks();
+	setTimeout(()=>{
+		generateBlocksInterval();
+	},4000)
 }
 
-//write in console -> generateBlocksInterval()
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function generateBlocksInterval(){
 	setInterval(()=>{
