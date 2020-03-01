@@ -1,11 +1,8 @@
-
+//give rand num between 0 and 255
 let randColor = () =>{
-	//give rand num between 0 and 255
 	 return Math.floor(Math.random() * 256) + 0
 }
 
-
-let aal =  document.body.querySelectorAll('.box');
 
 function generateBlocks(){
 	//create CSS style
@@ -38,10 +35,8 @@ function generateBlocks(){
 			let content =document.body.querySelectorAll(".content")[i];
 
 			content.append(p);
- 
 		}
 	});
-
 }
 
 
@@ -49,6 +44,8 @@ window.onload = function(){
 	generateBlocks();
 }
 
+//write in console -> generateBlocksInterval()
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function generateBlocksInterval(){
 	setInterval(()=>{
 		//clears body 
