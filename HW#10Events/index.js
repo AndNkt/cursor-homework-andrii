@@ -73,12 +73,18 @@ function generateBlocks(){
 		parent.innerHTML = `<kbd>${key}</kbd>
 							<span>${val}</span>`;
 
-
-		parent.addEventListener('click', function(){
+		//adding event listener
+		parent.addEventListener('mousedown', function(){
 			let p = `${someObj[key]}.wav`
   			var music = new Audio(p);
   			music.play();
+  			parent.classList.add('selected');
+		});
+		//remove selected class
+		parent.addEventListener('mouseup', ()=>{
+			parent.classList.remove('selected');
 		})
+
 							
 		wrapper.appendChild(parent);
 
