@@ -9,8 +9,18 @@ window.onload = function(){
 
 
 
-	generateBlocks();
+//	document.querySelector(.addEventListener("click", myFunction);
+//
+//
+//	function myFunction(evnt){
+//
+//		console.log(evnt);
+//		console.log(document.querySelector(evnt.target));
+//	}
 
+
+
+	generateBlocks();
 
 	function delSelect(evnt){
 		//get btn unpressed 
@@ -42,10 +52,6 @@ window.onload = function(){
 		//get music val obj
 		//console.log(someObj[btnKey]);
 
-
-		//let p = `${someObj[btnKey]}.wav`
-  		//var music = new Audio(p);
-  		//music.play();
   	}
 }
 
@@ -66,6 +72,14 @@ function generateBlocks(){
 		parent.setAttribute("name",`${key}`);
 		parent.innerHTML = `<kbd>${key}</kbd>
 							<span>${val}</span>`;
+
+
+		parent.addEventListener('click', function(){
+			let p = `${someObj[key]}.wav`
+  			var music = new Audio(p);
+  			music.play();
+		})
+							
 		wrapper.appendChild(parent);
 
 		//generate audio elements
