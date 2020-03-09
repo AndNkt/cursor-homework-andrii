@@ -7,19 +7,6 @@ window.onload = function(){
 
 	document.addEventListener('keyup', (evnt)=>{delSelect(evnt)});
 
-
-
-//	document.querySelector(.addEventListener("click", myFunction);
-//
-//
-//	function myFunction(evnt){
-//
-//		console.log(evnt);
-//		console.log(document.querySelector(evnt.target));
-//	}
-
-
-
 	generateBlocks();
 
 	function delSelect(evnt){
@@ -55,9 +42,7 @@ window.onload = function(){
   	}
 }
 
-
 function generateBlocks(){
-
 	////////////////////////////////////////////////////////////////////////////////////
 	
 	//generate div element with kbd
@@ -73,6 +58,8 @@ function generateBlocks(){
 		parent.innerHTML = `<kbd>${key}</kbd>
 							<span>${val}</span>`;
 
+
+		//eventually creating element with event listener
 		//adding event listener
 		parent.addEventListener('mousedown', function(){
 			let p = `${someObj[key]}.wav`
