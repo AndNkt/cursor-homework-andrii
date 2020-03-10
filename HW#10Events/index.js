@@ -58,8 +58,7 @@ function generateBlocks(){
 		parent.innerHTML = `<kbd>${key}</kbd>
 							<span>${val}</span>`;
 
-
-		//eventually creating element with event listener
+		//another way, create element with event listener (just for study purpose)
 		//adding event listener
 		parent.addEventListener('mousedown', function(){
 			let p = `${someObj[key]}.wav`

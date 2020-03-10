@@ -3,7 +3,7 @@ window.onload = function(){
 
 
 	function getRandomChinese(num=1){
-		let p = new Promise((resolve,reject)=>{
+		return new Promise((resolve,reject)=>{
 
 			if(typeof num !=='number' || num===0 || num%1>0){
 				reject( new Error('Bad input data. Should be num(int) & GT than>0'));
@@ -29,15 +29,13 @@ window.onload = function(){
 						//console.log('test',Date.now(),Date.now().toString().slice(-5));
 					}
 				},49);
-
-				}
-			})
-			p.then((data)=>{console.log(data)}).catch((e)=>console.log(e))
+			}
+		})
 	}
 
-		getRandomChinese(4.6);
-		getRandomChinese('avd');
-		getRandomChinese(4);
+		getRandomChinese(4.6).then((data)=>{console.log(data)}).catch((e)=>console.log(e));
+		getRandomChinese('avd').then((data)=>{console.log(data)}).catch((e)=>console.log(e));
+		getRandomChinese(4).then((data)=>{console.log(data)}).catch((e)=>console.log(e));
 	//( async()=>{
 	//	await
 	//})
