@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="ru-RU">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="ru-RU">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="ru-RU">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="ru-RU">
+<!--<![endif]-->
+<meta charset="UTF-8" />
+
+
+<style>
+	img {
+  		width: 148px;
+  		height: 204px;
+  	background: url(loading.gif) 50% no-repeat;
+  	border: 1px solid black;
+  	border-radius: 5px;
+	}
+
+</style>
+
+
+
+<title>Создаем  index.html и подключаем style.css (Урок №1)   | WCDT Design Studio</title>
+<head>
+	
+
+</head>
+<body>
+	<img src="Clear.gif">
+
+
+<script type="text/javascript">
+
+	console.log('huj');
+
+	var image = document.images[0];
+	var downloadingImage = new Image();
+	downloadingImage.onload = function(){
+    		image.src = this.src;   
+	};
+	downloadingImage.src = "https://starwars-visualguide.com/assets/img/characters/1.jpg";
+	
+
+	
+
+</script>
+
+</body>

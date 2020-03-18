@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>MVC</title>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+
+	<style>
+
+		img.card-img-top{
+  			width: 148px;
+  			height: 204px;
+  			background: url(loading.gif) 50% no-repeat;
+  			border: 1px solid black;
+  			display: block;
+    		margin-left: auto;
+    		margin-right: auto;
+    		
+		}
+	</style>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<!-- 
+
+	<p>MVC</p>
+	<button id="calcUser">Calc</button>
+	<br/>
+	<br/>
+	<div id="showResult"></div>
+
+-->
+	
+
+	<div class="container-lg p-3 my-3 bg-dark text-white">
+		<p>Get data about persons in film</p>
+
+
+
+  			<div class="form-group row pt-4 pb-1">
+  				<label for="film-number" class="col-sm-2">Number of film(by default ep5 - film 2):</label>
+  				<div class="col-sm-1">
+  					<input class="form-control" id="film-number" value="2" type="number" min="1" max="7" step="1">
+  				</div>
+	
+			</div>
+			<input id="5_ep_data" class="btn btn-primary" type="button" value="Get data">	
+			
+
+		<div id="persons_container" class="card-columns my-3">
+
+  			
+		
+
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src='./index.js'></script>
+</body>
+</html>

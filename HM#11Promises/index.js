@@ -33,7 +33,7 @@ window.onload = function(){
 		})
 	}
 
-		getRandomChinese(4.6).then((data)=>{console.log(data)}).catch((e)=>console.log(e));
+		getRandomChinese(4.6).then(console.log(data)).catch((e)=>console.log(e));
 		getRandomChinese('avd').then((data)=>{console.log(data)}).catch((e)=>console.log(e));
 		getRandomChinese(4).then((data)=>{console.log(data)}).catch((e)=>console.log(e));
 	//( async()=>{
