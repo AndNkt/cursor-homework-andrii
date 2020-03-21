@@ -1,3 +1,5 @@
+//it's my first try of realization of MVC pattern
+
 //services
 _apiBase = 'https://swapi.co/api';
 _imageBase = 'https://starwars-visualguide.com/assets/img';
@@ -245,7 +247,6 @@ let model = {
 			res.data.results.forEach((el)=>{
 				view.showPlanets(el)
 			})
-
 		}).then(console.log('end'));
 
 	},
@@ -275,8 +276,14 @@ let controller = {
 		el.disabled = true;
 	},
 	getValue: function() {
-		return document.getElementById('film-number').value;
-		//console.log('filmVal', getInputValue);
+		let inputVal = document.getElementById('film-number').value;
+		let parsVal = parseInt(inputVal);
+		//console.log('parsedVAlue',parsVal);
+		if(parsVal>=1 && parsVal<=7){
+			return inputVal
+		}else{
+			console.log('Wrong film input!!!!!!!')
+			return 2};
 	},
 	enableEl: function() {
 		let btn = document.getElementById('5_ep_data');
