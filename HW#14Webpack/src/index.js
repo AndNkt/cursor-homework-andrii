@@ -1,8 +1,8 @@
 //it's my first try of realization of MVC pattern
 
 //services
-_apiBase = 'https://swapi.co/api';
-_imageBase = 'https://starwars-visualguide.com/assets/img';
+let apiBase = 'https://swapi.co/api';
+let imageBase = 'https://starwars-visualguide.com/assets/img';
 //./assets/img/characters/1.jpg
 
 getId = (item) => {
@@ -27,13 +27,13 @@ getResource = async (url) => {
 };
 
 let serrvice = {
-
+	apiBase :'https://swapi.co/api',
 
 	getResource : async function (url) {
 		
 		let config = {
 			method: 'post',
-			url: `${this._apiBase}${url}`,
+			url: `${this.apiBase}${url}`,
 			headers: {
     			'Access-Control-Allow-Origin': '*',
     			'Access-Control-Allow-Headers': '*',
@@ -41,11 +41,11 @@ let serrvice = {
   			},
 		}
 
+		console.log('URRRl',`${this.apiBase}${url}`);
 
 
 		const res = await axios.get(config);
 
-		//console.log(`${this._apiBase}${url}`);
 
 		if (!res) {
 			throw new Error(`Could not get ${url}` +
