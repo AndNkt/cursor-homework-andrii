@@ -1,116 +1,16 @@
-//it's my first try of realization of MVC pattern
+//import axios from 'axios';
+import './styles/styles.css';//importing styles 
+import {getSimpleRes,getResource,getCharacterImg, getFilm,getAllFilms,getAllEpisodes,getPlanets} from './services/service.js'
 
-//services
-let apiBase = 'https://swapi.co/api';
-let imageBase = 'https://starwars-visualguide.com/assets/img';
-//./assets/img/characters/1.jpg
+function generateId(){
+return `f${(+new Date).toString(16)}`;
+}
 
-getId = (item) => {
+function getId (item){
 	const idRegExp = /\/([0-9]*)\/$/;
+	//console.log(item.match(idRegExp)[1])
 	return item.match(idRegExp)[1];
 };
-
-const that = this;
-getResource = async (url) => {
-	const res = await axios.get(`${this._apiBase}${url}`);
-
-	//console.log(`${this._apiBase}${url}`);
-
-	if (!res) {
-		throw new Error(`Could not get ${url}` +
-			`, received ${res.status}`)
-	};
-	//
-	//return await res;
-	return res;
-
-};
-
-let serrvice = {
-	apiBase :'https://swapi.co/api',
-
-	getResource : async function (url) {
-		
-		let config = {
-			method: 'post',
-			url: `${this.apiBase}${url}`,
-			headers: {
-    			'Access-Control-Allow-Origin': '*',
-    			'Access-Control-Allow-Headers': '*',
-    			'Access-Control-Allow-Methods': '*',
-  			},
-		}
-
-		console.log('URRRl',`${this.apiBase}${url}`);
-
-
-		const res = await axios.get(config);
-
-
-		if (!res) {
-			throw new Error(`Could not get ${url}` +
-			`, received ${res.status}`)
-		};
-	//
-	//return await res;
-		return res;
-
-	}
-}
-
-/*
-  	getCharacterImg = async(id) =>{
-  		const res = await this.getResource(`/characters/${id}.jpg/ `);
-  		//await console.log(res)
-  		return res;
-  	}
-*/
-getCharacterImg = (id) => {
-	return `${this._imageBase}/characters/${id}.jpg`
-}
-
-
-getSimpleRes = async (url) => {
-	const res = await axios.get(url);
-	if (!res) {
-		throw new Error(`Could not get ${url}` +
-			`, received ${res.status}`)
-	};
-	return res
-}
-
-//get specific Film
-getFilm = async (id) => {
-	const res = await this.getResource('/films/${id}/');
-	//await console.log(res)
-	return res;
-}
-
-
-getAllFilms = async () => {
-	const res = await this.getResource('/films/');
-	//await console.log(res)
-	return res;
-}
-
-
-getAllEpisodes = async () => {
-	const res = await this.getResource('/films/');
-	//await console.log(res)
-	//await res.data.results
-	return res.data.results;
-}
-
-//?page=2
-getPlanets = async () => {
-	const res = await serrvice.getResource('/planets/?page=1');
-	return res
-
-};
-
-generateId = () => `f${(+new Date).toString(16)}`;
-
-
 
 /*---------------start view----------------*/
 let view = {
@@ -241,14 +141,13 @@ let model = {
 
 			//
 
-
-
 			res.data.characters.forEach((el, index) => {
 				arrOfIds[index] = getCharacterImg(getId(el))
+				//console.log('el',getId(el));
 			});
 
 
-
+			//console.log('arrofids',arrOfIds);
 			//console.log(getSimpleRes(res.data.characters[0]));
 			arrOfIds.forEach((el, index) => {
 				getSimpleRes(res.data.characters[index]).then((res) => {
@@ -279,7 +178,7 @@ let model = {
 			res.data.results.forEach((el)=>{
 				view.showPlanets(el)
 			})
-		}).then(console.log('end'));
+		}).then(console.log('Planets Loaded'));
 
 	},
 
