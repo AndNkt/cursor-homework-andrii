@@ -1,75 +1,25 @@
 import React, { Component } from 'react';
 
-/*
- "plugins": [ "@babel/plugin-proposal-class-properties",["transform-runtime", {
-      "regenerator": true
-    }] ]
+import Timer from '../timer/Timer.js'
 
 
-*/
-
-
-//import Contracts from './components/Contracts'
-
-import service from '../../services/dummy-service.js';
-
-import Contracts from '../contracts/Timer.js'
+//import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    //filter and normalize data
-    let nonFiltered = new service();
-     nonFiltered._contacts = nonFiltered._contacts.map(item => {
-      if (item.gender == undefined) {
-        item.gender = 'uknown'
-      }
-      return item
-    }) 
- 
-    this.state = {
-      contacts: new service(),
-      search: '',
-      man: true,
-      female: true,
-      uknown: true,
-      filterByGender: nonFiltered,
-      filters: []
-    }
-
-  }
-
- 
+/*onTick = () => {
+  console.log("Осталось времени: " + this.state.time)
+}*/
 
   render() {
- 
-    let filteredContacts;
-    
-    let {man, female, uknown}=this.state;
-   
-    if(man&&female&&uknown){
-      filteredContacts = this.state.contacts._contacts
-    }else{
-
-      
-      filteredContacts = this.state.filterByGender._contacts.filter(item => {
-        if (item.gender) {
-          
-          return this.state.filters.includes(item.gender)
-        }
-        return false
-      });
-    }
-
-  
     return (
-        <p>
-          <Timer contacts={filteredContacts} search={this.state.search} start={this.state.contacts}/>
-        </p>
+      <div className="App">
+        <Timer time = {12000} step = {1} onTick={(state) => console.log("Осталось времени: " + state.count)}  autostart={true}/>
+        <Timer time = {48000} step = {2} onTick={(state) => console.log("Осталось времени: " + state.count)}  autostart={false}/>
       </div>
-    )
-  }//render
+    );
+  }
 }
 export default App;
 
 
+ 
