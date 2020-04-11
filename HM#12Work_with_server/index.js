@@ -94,9 +94,12 @@
 			parent.classList.add('card');
 			parent.classList.add('bg-secondary');
 
+			//set width of card
+			parent.setAttribute("style", "width:18rem; border: 1px solid blue;");
+
 			let imgId = generateId();
 
-			let markup = `<img class="card-img-top" src="Clear.gif" alt='${name} image' id='${imgId}'>
+			let markup = `<img class="card-img-top" src="./img/Clear.gif" alt='${name} image' id='${imgId}'>
 						<div class="card-body text-center" id="cardBody"> 
 							<h4 class="card-title">${name}</h4>
 							<p class="card-text">${birth_year}</p>
