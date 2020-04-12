@@ -1,5 +1,5 @@
 {
-  "homepage": "https://andnkt.github.io/cursor-homework-andrii/HW%2317ReactL3/",
+  "homepage": "https://andnkt.github.io/cursor-homework-andrii/HW%2318ReactL4/",
   "name": "",
   "version": "",
   "dependencies": {
@@ -8,6 +8,7 @@
     "file-loader": "^6.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "style-loader": "^1.1.3"
   },
   "scripts": {
