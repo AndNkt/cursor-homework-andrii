@@ -1,14 +1,21 @@
 import React from 'react';
 
+console.log('post')
 export default function Post(props) {
     console.log(props);
-    console.log('photo',props.author.photo);
+/*
+        console.log(props);
+        
+        console.log(this.props);*/
+       // console.log('photo',props.author.photo);
     let {author:{name, nickname: nick},date,image:postImage, content} = props;
 
     let userPhoto = name+' avatar';
 
+
+
     return (
-        <div className="container p-2">
+        <div className="postContainer p-2">
 
             <div className="row align-items-start">
                 <div className="col-2">
@@ -43,3 +50,16 @@ export default function Post(props) {
     
     )
 }
+
+/*
+const PostContainer = (props) => {
+    return(
+        <PostHeader/>
+        <PostBody/>
+        <PostFooter/>
+    )
+}
+
+const PostHeader = (props) => {
+
+} */
