@@ -1,108 +1,18 @@
-//it's my first try of realization of MVC pattern
+//import axios from 'axios';
+import './styles/styles.css';//importing styles 
+import {getSimpleRes,getResource,getCharacterImg, getFilm,getAllFilms,getAllEpisodes,getPlanets} from './services/service.js'
 
-//services
-_apiBase = 'https://swapi.co/api';
-_imageBase = 'https://starwars-visualguide.com/assets/img';
-//./assets/img/characters/1.jpg
+function generateId(){
+return `f${(+new Date).toString(16)}`;
+}
 
-getId = (item) => {
+function getId (item){
 	const idRegExp = /\/([0-9]*)\/$/;
+	//console.log(item.match(idRegExp)[1])
 	return item.match(idRegExp)[1];
 };
 
-
-getResource = async (url) => {
-	const res = await axios.get(`${this._apiBase}${url}`);
-
-	//console.log(`${this._apiBase}${url}`);
-
-	if (!res) {
-		throw new Error(`Could not get ${url}` +
-			`, received ${res.status}`)
-	};
-	//
-	//return await res;
-	return res;
-
-};
-
-/*
-  	getCharacterImg = async(id) =>{
-  		const res = await this.getResource(`/characters/${id}.jpg/ `);
-  		//await console.log(res)
-  		return res;
-  	}
-*/
-getCharacterImg = (id) => {
-	return `${this._imageBase}/characters/${id}.jpg`
-}
-
-
-getSimpleRes = async (url) => {
-	const res = await axios.get(url);
-	if (!res) {
-		throw new Error(`Could not get ${url}` +
-			`, received ${res.status}`)
-	};
-	return res
-}
-
-//get specific Film
-getFilm = async (id) => {
-	const res = await this.getResource(`/films/${id}/ `);
-	//await console.log(res)
-	return res;
-}
-
-
-getAllFilms = async () => {
-	const res = await this.getResource(`/films/ `);
-	//await console.log(res)
-	return res;
-}
-
-
-getAllEpisodes = async () => {
-	const res = await this.getResource(`/films/ `);
-	//await console.log(res)
-	//await res.data.results
-	return res.data.results;
-}
-
-//?page=2
-getPlanets = async () => {
-	const res = await this.getResource(`/planets/?page=1`);
-	return res
-
-};
-
-generateId = () => `f${(+new Date).toString(16)}`;
-
-
-
 /*---------------start view----------------*/
-<<<<<<< HEAD
-	let view = {
-		showPersons: function(someData, imgUrl){
-			//console.log('showPersons', someData);
-			//let fullImageUrl = 
-			//console.log('imgUrl', imgUrl)
-			let {name, birth_year, gender} =someData.data;
-			//let shit = 'Test shit';
-			let el = document.getElementById("persons_container");
-			
-			let parent = document.createElement("div");
-			
-			parent.classList.add('card');
-			parent.classList.add('bg-secondary');
-
-			//set width of card
-			parent.setAttribute("style", "width:18rem; border: 1px solid blue;");
-
-			let imgId = generateId();
-
-			let markup = `<img class="card-img-top" src="./img/Clear.gif" alt='${name} image' id='${imgId}'>
-=======
 let view = {
 	showPersons: function(someData, imgUrl) {
 		//console.log('showPersons', someData);
@@ -124,7 +34,6 @@ let view = {
 		let imgId = generateId();
 
 		let markup = `<img class="card-img-top" src="Clear.gif" alt='${name} image' id='${imgId}'>
->>>>>>> 6273ab0528a0667db131f7517b077d0ab6c6f798
 						<div class="card-body text-center" id="cardBody"> 
 							<h4 class="card-title">${name}</h4>
 							<p class="card-text">${birth_year}</p>
@@ -232,14 +141,13 @@ let model = {
 
 			//
 
-
-
 			res.data.characters.forEach((el, index) => {
 				arrOfIds[index] = getCharacterImg(getId(el))
+				//console.log('el',getId(el));
 			});
 
 
-
+			//console.log('arrofids',arrOfIds);
 			//console.log(getSimpleRes(res.data.characters[0]));
 			arrOfIds.forEach((el, index) => {
 				getSimpleRes(res.data.characters[index]).then((res) => {
@@ -270,7 +178,7 @@ let model = {
 			res.data.results.forEach((el)=>{
 				view.showPlanets(el)
 			})
-		}).then(console.log('end'));
+		}).then(console.log('Planets Loaded'));
 
 	},
 

@@ -1,0 +1,43 @@
+body{
+	background-color:whitesmoke;
+}
+
+#root{
+	margin-top: 1rem;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	color:lightslategray;
+	
+}
+
+.author-avatar{
+	vertical-align: middle;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%
+}
+.content{
+	font-size: 1rem;
+	color: white;
+}
+.author-name{
+	font-size: large;
+	font-weight: bold;
+	color: white;
+}
+.author-nick::after{
+	content: ' .';
+	position: relative;
+	top: -5px;
+}
+
+.author-nick,date {
+	font-size: 1.2 rem;
+}
+
+.post-image{
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
