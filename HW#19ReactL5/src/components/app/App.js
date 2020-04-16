@@ -20,8 +20,8 @@ import SignUp from '../SignUp/SignUp';
           <Router>
             <APP className="App">
                 <Switch>
+                  <Route path="/signup" component={SignUp}/>
                   <Route path="/" component={SignIn}/>
-                  <Route path="/signup" exact component={SignUp}/>
                 </Switch>
             </APP>
           </Router>
