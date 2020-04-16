@@ -22,7 +22,7 @@ class Contracts extends Component{
      
         return(
             <ul className="list-group">
-                {contactList}
+                {(contactList.length>0)?contactList:'No such data'}
                 
             </ul>
         ); 
