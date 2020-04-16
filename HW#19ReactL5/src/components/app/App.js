@@ -20,7 +20,7 @@ import SignUp from '../SignUp/SignUp';
           <Router>
             <APP className="App">
                 <Switch>
-                  <Route path="/" exact component={SignIn}/>
+                  <Route path="/" component={SignIn}/>
                   <Route path="/signup" exact component={SignUp}/>
                 </Switch>
             </APP>
