@@ -1,6 +1,24 @@
-import counterReducer from './counter';
-import loggedReducer from './isLogged';
 
-import {combineReducers} form 'redux'
 
-const allReducers = combineReducers();
+
+import Posts from './Posts'
+//import updatePostImage from './userData';
+
+import {addedPost} from './userData';
+//import addPost from './userData';
+
+
+
+
+import {combineReducers} from 'redux'
+
+const allReducers = combineReducers({
+    Posts,
+    addedPost,
+    //  updatePostImage,
+    //addPost
+}); 
+
+
+
+export default allReducers;

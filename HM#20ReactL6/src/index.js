@@ -3,72 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
 
-//STORE => GLOBAL STATE
+import allReducer from './reducers'
 
-
-
-
-
-//ACTION => INCREMENT
-
-/////////////////////////////////////////////////////////
-//REDUCERS setup
-
-const DECREMENT = () =>{
-	return {
-		type: 'DECREMENT'
-	}
-}
-
-
-const INCREMENT = () =>{
-	return {
-		type: 'INCREMENT'
-	}
-}
-
-const ADDPOST = () =>{
-	return {
-		type: 'INCREMENT'
-	}
-}
-
-/* 
-const COUNTER = (state =0, action)=>{
-	switch(action.type){
-		case 'INCREMENT':
-			return state + 1;
-		case 'DECREMENT':
-			return state - 1;
-	}
-}
- */
-/* 
-//creating store
-let store = createStore(COUNTER);
-
-//DISPLAY it in the console // subscribe on store changes
-store.subscribe(()=> console.log(store.getState()));
-
-//DISPATCH (for execute ACTION)
-store.dispatch(INCREMENT());
- */
-/////////////////////////////////////////////////////////
-
-
-
-
-
-
-//REDUCER => CHECK WICH ACTION AND CHANGE STATE
-
-//DISPATCH
+const myStore = createStore(allReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 ReactDOM.render(
 	<React.StrictMode>
-	  <App />
+		<Provider store={myStore}>
+			<App/>
+		</Provider>
 	</React.StrictMode>,
 	document.getElementById('root')
   );
